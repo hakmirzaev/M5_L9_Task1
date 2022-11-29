@@ -18,6 +18,7 @@
 		0E1FC270293681C9006EAF8C /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC26F293681C9006EAF8C /* PostItem.swift */; };
 		0E1FC272293685F9006EAF8C /* CreateRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC271293685F9006EAF8C /* CreateRoom.swift */; };
 		0E1FC2742936893D006EAF8C /* CreateStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC2732936893D006EAF8C /* CreateStory.swift */; };
+		0E1FC27629368E41006EAF8C /* updateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC27529368E41006EAF8C /* updateProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		0E1FC26F293681C9006EAF8C /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
 		0E1FC271293685F9006EAF8C /* CreateRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom.swift; sourceTree = "<group>"; };
 		0E1FC2732936893D006EAF8C /* CreateStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStory.swift; sourceTree = "<group>"; };
+		0E1FC27529368E41006EAF8C /* updateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				0E1FC26F293681C9006EAF8C /* PostItem.swift */,
 				0E1FC271293685F9006EAF8C /* CreateRoom.swift */,
 				0E1FC2732936893D006EAF8C /* CreateStory.swift */,
+				0E1FC27529368E41006EAF8C /* updateProfile.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				0E1FC272293685F9006EAF8C /* CreateRoom.swift in Sources */,
 				0E1FC25629367519006EAF8C /* M5_L9_Task1App.swift in Sources */,
 				0E1FC26E29367FB7006EAF8C /* ItemStory.swift in Sources */,
+				0E1FC27629368E41006EAF8C /* updateProfile.swift in Sources */,
 				0E1FC26C29367D89006EAF8C /* ItemRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

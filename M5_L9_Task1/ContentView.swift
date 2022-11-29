@@ -81,6 +81,7 @@ struct ContentView: View {
                     PostItem(img_url: "photo1")
                     PostItem(img_url: "photo2")
                     PostItem(img_url: "photo3")
+                    updateProfile()
                 }
             }
             .navigationBarItems(
