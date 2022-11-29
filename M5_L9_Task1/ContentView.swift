@@ -80,8 +80,8 @@ struct ContentView: View {
                     HStack{}.frame(maxWidth: .infinity).frame(height: 10).background(Color.gray.opacity(0.3))
                     PostItem(img_url: "photo1")
                     PostItem(img_url: "photo2")
-                    PostItem(img_url: "photo3")
                     updateProfile()
+                    doubleImagePost(profile_img: "itpark_profile", post_img1: "itpark_post1", post_img2: "itpark_post2", profile_name: "IT-Park")
                 }
             }
             .navigationBarItems(
