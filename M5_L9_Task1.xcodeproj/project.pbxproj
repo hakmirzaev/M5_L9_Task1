@@ -13,6 +13,11 @@
 		0E1FC25D2936751B006EAF8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E1FC25C2936751B006EAF8C /* Preview Assets.xcassets */; };
 		0E1FC25F2936751B006EAF8C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC25E2936751B006EAF8C /* Persistence.swift */; };
 		0E1FC2622936751B006EAF8C /* M5_L9_Task1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC2602936751B006EAF8C /* M5_L9_Task1.xcdatamodeld */; };
+		0E1FC26C29367D89006EAF8C /* ItemRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC26B29367D89006EAF8C /* ItemRoom.swift */; };
+		0E1FC26E29367FB7006EAF8C /* ItemStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC26D29367FB7006EAF8C /* ItemStory.swift */; };
+		0E1FC270293681C9006EAF8C /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC26F293681C9006EAF8C /* PostItem.swift */; };
+		0E1FC272293685F9006EAF8C /* CreateRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC271293685F9006EAF8C /* CreateRoom.swift */; };
+		0E1FC2742936893D006EAF8C /* CreateStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1FC2732936893D006EAF8C /* CreateStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		0E1FC25C2936751B006EAF8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E1FC25E2936751B006EAF8C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0E1FC2612936751B006EAF8C /* M5_L9_Task1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = M5_L9_Task1.xcdatamodel; sourceTree = "<group>"; };
+		0E1FC26B29367D89006EAF8C /* ItemRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRoom.swift; sourceTree = "<group>"; };
+		0E1FC26D29367FB7006EAF8C /* ItemStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStory.swift; sourceTree = "<group>"; };
+		0E1FC26F293681C9006EAF8C /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+		0E1FC271293685F9006EAF8C /* CreateRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoom.swift; sourceTree = "<group>"; };
+		0E1FC2732936893D006EAF8C /* CreateStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,7 @@
 		0E1FC25429367519006EAF8C /* M5_L9_Task1 */ = {
 			isa = PBXGroup;
 			children = (
+				0E1FC26A29367D7D006EAF8C /* cells */,
 				0E1FC25529367519006EAF8C /* M5_L9_Task1App.swift */,
 				0E1FC25729367519006EAF8C /* ContentView.swift */,
 				0E1FC2592936751B006EAF8C /* Assets.xcassets */,
@@ -71,6 +82,18 @@
 				0E1FC25C2936751B006EAF8C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0E1FC26A29367D7D006EAF8C /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				0E1FC26B29367D89006EAF8C /* ItemRoom.swift */,
+				0E1FC26D29367FB7006EAF8C /* ItemStory.swift */,
+				0E1FC26F293681C9006EAF8C /* PostItem.swift */,
+				0E1FC271293685F9006EAF8C /* CreateRoom.swift */,
+				0E1FC2732936893D006EAF8C /* CreateStory.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1FC270293681C9006EAF8C /* PostItem.swift in Sources */,
 				0E1FC25F2936751B006EAF8C /* Persistence.swift in Sources */,
 				0E1FC2622936751B006EAF8C /* M5_L9_Task1.xcdatamodeld in Sources */,
 				0E1FC25829367519006EAF8C /* ContentView.swift in Sources */,
+				0E1FC2742936893D006EAF8C /* CreateStory.swift in Sources */,
+				0E1FC272293685F9006EAF8C /* CreateRoom.swift in Sources */,
 				0E1FC25629367519006EAF8C /* M5_L9_Task1App.swift in Sources */,
+				0E1FC26E29367FB7006EAF8C /* ItemStory.swift in Sources */,
+				0E1FC26C29367D89006EAF8C /* ItemRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

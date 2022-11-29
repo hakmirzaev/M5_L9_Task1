@@ -9,80 +9,108 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+        NavigationView{
+            ScrollView{
+                //profile, live, photo, room
+                VStack{
+                    HStack{
+                        Image("profile").resizable().frame(width: 60, height: 60)
+                            .cornerRadius(30)
+                        Text("What's on your mind?").font(.system(size: 17))
+                    }.frame(height: 90)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .padding(.leading, 10).padding(.trailing, 10)
+                    HStack{}.frame(maxWidth: .infinity).frame(height: 1).background(Color.gray.opacity(0.3))
+                    HStack{
+                        Spacer()
+                        Button(action: {}, label: {
+                            Image("ic_camera").foregroundColor(.black)
+                            Text("Live").foregroundColor(.black)
+                        })
+                        Spacer()
+                        Button(action: {}, label: {
+                            Image(systemName: "photo.fill").foregroundColor(.black)
+                            Text("Photo").foregroundColor(.black)
+                        })
+                        Spacer()
+                        Button(action: {}, label: {
+                            Image("ic_room").foregroundColor(.black)
+                            Text("Room").foregroundColor(.black)
+                        })
+                        Spacer()
                     }
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                //create room
+                VStack{
+                    HStack{}.frame(maxWidth: .infinity).frame(height: 10).background(Color.gray.opacity(0.3))
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack(spacing: 20){
+                            CreateRoom()
+                            ItemRoom()
+                            ItemRoom(isOnline: true)
+                            ItemRoom(isOnline: true)
+                            ItemRoom(isOnline: true)
+                            ItemRoom(isOnline: true)
+                            ItemRoom(isOnline: true)
+                            ItemRoom(isOnline: true)
+                        }
+                    }.padding(.leading, 10)
+                        .frame(height: 100)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                //create story
+                VStack{
+                    HStack{}.frame(maxWidth: .infinity).frame(height: 10).background(Color.gray.opacity(0.3))
+                    ScrollView(.horizontal, showsIndicators: false){
+                        HStack{
+                            CreateStory()
+                            ItemStory()
+                            ItemStory()
+                            ItemStory()
+                            ItemStory()
+                            ItemStory()
+                            ItemStory()
+                            ItemStory()
+                        }
+                    }.padding(.leading, 10).padding(.trailing, 10)
+                }
+                //post items
+                VStack{
+                    HStack{}.frame(maxWidth: .infinity).frame(height: 10).background(Color.gray.opacity(0.3))
+                    PostItem(img_url: "photo1")
+                    PostItem(img_url: "photo2")
+                    PostItem(img_url: "photo3")
                 }
             }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            .navigationBarItems(
+                leading: Text("facebook")
+                    .fontWeight(.bold)
+                    .font(.system(size: 25))
+                    .foregroundColor(.blue),
+                trailing: HStack{
+                    Button(action: {}, label: {
+                        ZStack{
+                            Circle().frame(width: 36, height: 36)
+                                .foregroundColor(.gray.opacity(0.3))
+                            Image(systemName: "magnifyingglass").foregroundColor(.black)
+                        }
+                    })
+                    Button(action: {}, label: {
+                        ZStack{
+                            Circle().frame(width: 36, height: 36)
+                                .foregroundColor(.gray.opacity(0.3))
+                            Image(systemName: "bolt.circle.fill").foregroundColor(.black)
+                        }
+                    })
+                })
+            .navigationBarTitle("", displayMode: .inline)
         }
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
     }
 }
